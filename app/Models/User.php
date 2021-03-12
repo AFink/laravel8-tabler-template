@@ -58,20 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    /**
-     * Get the users acronym.
-     *
-     * @return string
-     */
-    function acronym()
-    {
-        $words = preg_split("/[\s,_-]+/", $this->name);
-        $acronym = "";
-
-        foreach ($words as $w) {
-            $acronym .= $w[0];
-        }
-        return $acronym;
-    }
 }

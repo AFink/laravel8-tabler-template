@@ -1,9 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="page-pretitle">
-            {{ __('Overview') }}
-        </div>
-        <h2 class="page-title">
+        <h2 class="h4 font-weight-bold">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>

@@ -1,10 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="page-pretitle">
-            {{ __('Teams') }}
-        </div>
-        <h2 class="page-title">
-            {{ __('Create') }}
+        <h2 class="h4 font-weight-bold">
+            {{ __('Create Team') }}
         </h2>
     </x-slot>
 
