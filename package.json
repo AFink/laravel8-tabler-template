@@ -10,8 +10,6 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.2.1",
-        "@tailwindcss/typography": "^0.3.0",
         "alpinejs": "^2.7.3",
         "autoprefixer": "^10.0.2",
         "axios": "^0.21",
@@ -25,6 +23,9 @@
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.32.8",
         "sass-loader": "^10.1.1",
+        "@swup/preload-plugin": "^1.0.3",
+        "@swup/slide-theme": "^1.0.5",
+        "swup": "^2.0.14",
         "tailwindcss": "^2.0.1"
     }
 }

@@ -13,7 +13,7 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="bg-light font-sans antialiased">
+    <body class="bg-light font-sans antialiased" id="swup">
         {{ $slot }}
     </body>
 </html>
