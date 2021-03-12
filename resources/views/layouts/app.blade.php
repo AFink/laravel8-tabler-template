@@ -14,21 +14,35 @@
 
 <body class="font-sans antialiased bg-light">
     <x-jet-banner />
-    @livewire('navigation-menu')
-
     <!-- Swup Container -->
-    <div id="swup">
-        <!-- Page Heading -->
-        <header class="d-flex py-3 bg-white shadow-sm border-bottom">
-            <div class="container">
-                {{ $header }}
-            </div>
-        </header>
+    <div class="page" id="swup">
+        @livewire('navigation-menu')
 
-        <!-- Page Content -->
-        <main class="container my-5">
-            {{ $slot }}
-        </main>
+        <div class="content">
+            <div class="container-xl">
+                <!-- Page Heading -->
+                <div class="page-header text-white">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            {{ $header }}
+                        </div>
+                        @if ($headerbtns ?? false)
+                            <div class="col-auto ms-auto">
+                                <div class="btn-list">
+                                    {{ $headerbtns }}
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
+                <!-- Page Content -->
+                <main>
+                    {{ $slot }}
+                </main>
+            </div>
+            @include('footer')
+        </div>
     </div>
 
     @stack('modals')
