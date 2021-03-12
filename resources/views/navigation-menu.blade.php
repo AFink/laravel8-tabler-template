@@ -1,158 +1,111 @@
-<nav class="navbar navbar-expand-md navbar-dark navbar-overlap d-print-none">
-    <div class="container-xl">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand mr-4" href="/">
+            <x-jet-application-mark width="36" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-            <a href=".">
-                <x-jet-application-mark width="36" />
-            </a>
-        </h1>
-        <div class="navbar-nav flex-row order-md-last">
-            <div class="nav-item dropdown d-none d-md-flex me-3">
-                <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
-                    aria-label="Show notifications">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
-                        <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
-                    </svg>
-                    <span class="badge bg-red"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end dropdown-menu-card">
-                    <div class="card">
-                        <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad amet consectetur
-                            exercitationem fugiat in ipsa ipsum, natus odio quidem quod repudiandae sapiente. Amet
-                            debitis et magni maxime necessitatibus ullam.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Settings Dropdown -->
-            @auth
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
+                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    {{ __('Dashboard') }}
+                </x-jet-nav-link>
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto align-items-baseline">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                    <div class="nav-item dropdown me-3">
-                        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
-                            aria-label="Open team menu">
+                    <x-jet-dropdown id="teamManagementDropdown">
+                        <x-slot name="trigger">
+                            {{ Auth::user()->currentTeam->name }}
 
-
-                            <div>{{ Auth::user()->currentTeam->name }}</div>
-                            <svg class="ml-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                    clip-rule="evenodd" />
+                            <svg class="ml-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
+                        </x-slot>
 
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <x-slot name="content">
                             <!-- Team Management -->
-                            <span class="dropdown-header">{{ __('Manage Team') }}</span>
-                            <a href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" class="dropdown-item">
+                            <h6 class="dropdown-header">
+                                {{ __('Manage Team') }}
+                            </h6>
+
+                            <!-- Team Settings -->
+                            <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                 {{ __('Team Settings') }}
-                            </a>
+                            </x-jet-dropdown-link>
 
                             @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                <a href="{{ route('teams.create') }}" class="dropdown-item">
+                                <x-jet-dropdown-link href="{{ route('teams.create') }}">
                                     {{ __('Create New Team') }}
-                                </a>
+                                </x-jet-dropdown-link>
                             @endcan
 
-                            <div class="dropdown-divider"></div>
+                            <hr class="dropdown-divider">
 
                             <!-- Team Switcher -->
-                            <span class="dropdown-header">{{ __('Switch Teams') }}</span>
+                            <h6 class="dropdown-header">
+                                {{ __('Switch Teams') }}
+                            </h6>
+
                             @foreach (Auth::user()->allTeams() as $team)
                                 <x-jet-switchable-team :team="$team" />
                             @endforeach
-                        </div>
-                    </div>
+                        </x-slot>
+                    </x-jet-dropdown>
                 @endif
 
-                <!-- User Dropdown -->
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
-                        aria-label="Open user menu">
-                        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <span class="avatar avatar-sm"
-                                style="background-image: url({{ Auth::user()->profile_photo_url }})"></span>
-                        @else
-                            <span class="avatar avatar-sm">{{ Auth::user()->acronym() }}</span>
-                        @endif
-                        <div class="d-none d-xl-block ps-2">
-                            <div>{{ Auth::user()->name }}</div>
-                            <!-- <div class="mt-1 small text-muted">UI Designer</div> -->
-                        </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                        <!-- Account Management -->
-                        <span class="dropdown-header">{{ __('Manage Account') }}</span>
-                        <a href="{{ route('profile.show') }}" class="dropdown-item">
-                            {{ __('Profile') }}
-                        </a>
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <a href="{{ route('api-tokens.index') }}" class="dropdown-item">
-                                {{ __('API Tokens') }}
-                            </a>
-                        @endif
-                        <div class="dropdown-divider"></div>
-                        <!-- Authentication -->
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();"
-                            class="dropdown-item">
-                            {{ __('Log out') }}
-                        </a>
-                        <form method="POST" id="logout-form" action="{{ route('logout') }}">
-                            @csrf
-                        </form>
-                    </div>
-                </div>
-            @endauth
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
-                <ul class="navbar-nav">
-                    <li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('dashboard') }}">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
-                                    xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <polyline points="5 12 3 12 12 3 21 12 19 12" />
-                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                <!-- Settings Dropdown -->
+                @auth
+                    <x-jet-dropdown id="settingsDropdown">
+                        <x-slot name="trigger">
+                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                                <img class="rounded-circle" width="32" height="32" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            @else
+                                {{ Auth::user()->name }}
+
+                                <svg class="ml-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
                                 </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Dashboard
-                            </span>
-                        </a>
-                    </li>
-                    <!--<div
-                        class="ms-md-auto ps-md-4 py-2 py-md-0 me-md-4 order-first order-md-last flex-grow-1 flex-md-grow-0" style="align-self: center;">
-                        <form action="." method="get">
-                            <div class="input-icon">
-                                <span class="input-icon-addon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <circle cx="10" cy="10" r="7" />
-                                        <line x1="21" y1="21" x2="15" y2="15" />
-                                    </svg>
-                                </span>
-                                <input type="text" class="form-control form-control-dark" placeholder="Search…"
-                                    aria-label="Search in website">
-                            </div>
-                        </form>
-                    </div> -->
-            </div>
+                            @endif
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <!-- Account Management -->
+                            <h6 class="dropdown-header small text-muted">
+                                {{ __('Manage Account') }}
+                            </h6>
+
+                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                {{ __('Profile') }}
+                            </x-jet-dropdown-link>
+
+                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                    {{ __('API Tokens') }}
+                                </x-jet-dropdown-link>
+                            @endif
+
+                            <hr class="dropdown-divider">
+
+                            <!-- Authentication -->
+                            <x-jet-dropdown-link href="{{ route('logout') }}"
+                                                 onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                {{ __('Log out') }}
+                            </x-jet-dropdown-link>
+                            <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                                @csrf
+                            </form>
+                        </x-slot>
+                    </x-jet-dropdown>
+                @endauth
+            </ul>
         </div>
     </div>
 </nav>
