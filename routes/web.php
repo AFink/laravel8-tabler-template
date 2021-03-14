@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserVerificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/email/verify', [UserVerificationController::class, 'notice'])->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', [UserVerificationController::class, 'verify'])->name('verification.verify');
+Route::post('/email/verification-notification', [UserVerificationController::class, 'send'])->name('verification.send');
+
 
 Route::get('/', function () {
     return view('welcome');

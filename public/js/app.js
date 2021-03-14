@@ -7655,9 +7655,14 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 
 
-window.swup = new swup__WEBPACK_IMPORTED_MODULE_0__.default({
-  plugins: [new _swup_preload_plugin__WEBPACK_IMPORTED_MODULE_1__.default(), new (_swup_slide_theme__WEBPACK_IMPORTED_MODULE_2___default())()]
-});
+var swup = document.getElementById('swup');
+
+if (swup) {
+  window.swup = new swup__WEBPACK_IMPORTED_MODULE_0__.default({
+    plugins: [new _swup_preload_plugin__WEBPACK_IMPORTED_MODULE_1__.default(), new (_swup_slide_theme__WEBPACK_IMPORTED_MODULE_2___default())()]
+  });
+}
+
 document.addEventListener('swup:contentReplaced', function (event) {
   window.livewire.restart();
 });
