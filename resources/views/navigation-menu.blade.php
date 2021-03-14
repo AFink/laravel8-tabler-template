@@ -99,7 +99,7 @@
                         <!-- Authentication -->
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                 document.getElementById('logout-form').submit();"
-                            class="dropdown-item">
+                            class="dropdown-item" data-no-swup>
                             {{ __('Log out') }}
                         </a>
                         <form method="POST" id="logout-form" action="{{ route('logout') }}">

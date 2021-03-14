@@ -25,7 +25,7 @@
         @if (Route::has('logout'))
             <div class="text-center text-muted mt-3">
                 {{ __('Nevermind,') }}
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout</a>.
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();" data-no-swup>Logout</a>.
                 <form id="logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>

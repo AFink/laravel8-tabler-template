@@ -55,7 +55,7 @@
         
             <div class="text-center text-muted mt-3">
                 {{ __('Nevermind, go') }}
-                <a href="javascript:history.back()">{{ __('back') }}</a>@if (Route::has('logout')) {{ __('or') }} <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout</a>@endif.
+                <a href="javascript:history.back()">{{ __('back') }}</a>@if (Route::has('logout')) {{ __('or') }} <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();" data-no-swup>Logout</a>@endif.
                 <form id="logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
