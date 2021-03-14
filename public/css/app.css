@@ -17238,3 +17238,9 @@ Antialiasing
 .form-list > div:first-child h3, .form-list > div:first-child .h3 {
   color: #fff;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

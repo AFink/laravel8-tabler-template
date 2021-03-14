@@ -50,7 +50,7 @@
         @if (JoelButcher\Socialstream\Socialstream::hasSupportFor('linkedin'))
             <div class="col">
                 <a class="btn btn-white w-100" href="{{ route('oauth.redirect', ['provider' => 'linkedin']) }}">
-                    <x-linked-in-icon />
+                    <x-linkedin-icon />
                     {{ __('Login with LinkedIn') }}
                 </a>
             </div>

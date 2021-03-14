@@ -33,12 +33,12 @@
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" class="rounded-circle" height="80px" width="80px">
+                    <x-avatar :model="$this->user" size="xl" />
                 </div>
 
                 <!-- New Profile Photo Preview -->
                 <div class="mt-2" x-show="photoPreview">
-                    <img x-bind:src="photoPreview" class="rounded-circle" width="80px" height="80px">
+                    <span class="avatar avatar-xl" x-bind:style="`background-image: url(${photoPreview})`"></span>
                 </div>
 
                 <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
