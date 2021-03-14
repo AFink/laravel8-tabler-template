@@ -17,12 +17,14 @@
             <x-jet-label value="{{ __('Team Owner') }}" />
 
             <div class="d-flex mt-2">
-                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                    <img class="rounded-circle mr-2" width="48" src="{{ $team->owner->profile_photo_url }}">
-                @endif
-                <div>
-                    <div>{{ $team->owner->name }}</div>
-                    <div class="text-muted">{{ $team->owner->email }}</div>
+                <div class="row">
+                    <div class="col-auto">
+                        <x-avatar :model="$team->owner" size="md" />
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="font-weight-medium">{{ $team->owner->name }}</div>
+                        <div class="text-muted">{{ $team->owner->email }}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,11 +34,8 @@
             <div class="form-group">
                 <x-jet-label for="name" value="{{ __('Team Name') }}" />
 
-                <x-jet-input id="name"
-                             type="text"
-                             class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
-                             wire:model.defer="state.name"
-                             :disabled="! Gate::check('update', $team)" />
+                <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
+                    wire:model.defer="state.name" :disabled="! Gate::check('update', $team)" />
 
                 <x-jet-input-error for="name" />
             </div>
@@ -45,11 +44,11 @@
 
     @if (Gate::check('update', $team))
         <x-slot name="actions">
-			<div class="d-flex align-items-baseline">
-				<x-jet-button>
-					{{ __('Save') }}
-				</x-jet-button>
-			</div>
+            <div class="d-flex align-items-baseline">
+                <x-jet-button>
+                    {{ __('Save') }}
+                </x-jet-button>
+            </div>
         </x-slot>
     @endif
 </x-jet-form-section>
