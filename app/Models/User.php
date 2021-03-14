@@ -12,11 +12,15 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Traits\HasProfilePhoto as ModifiedHasProfilePhoto;
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
-    use HasProfilePhoto;
+    use HasProfilePhoto, ModifiedHasProfilePhoto {
+        ModifiedHasProfilePhoto::defaultProfilePhotoUrl insteadof HasProfilePhoto;
+    }
     use HasTeams;
     use HasConnectedAccounts;
     use Notifiable;
@@ -60,20 +64,4 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
-
-    /**
-     * Get the users acronym.
-     *
-     * @return string
-     */
-    function acronym()
-    {
-        $words = preg_split("/[\s,_-]+/", $this->name);
-        $acronym = "";
-
-        foreach ($words as $w) {
-            $acronym .= $w[0];
-        }
-        return $acronym;
-    }
 }

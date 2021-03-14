@@ -8,7 +8,7 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="form-list">
         @livewire('api.api-token-manager')
     </div>
 </x-app-layout>

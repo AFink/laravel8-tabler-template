@@ -20,33 +20,56 @@
             {{ __('You are free to connect any social accounts to your profile and may remove any connected accounts at any time. If you feel any of your connected accounts have been compromised, you should disconnect them immediately and change your password.') }}
         </div>
 
-        <div class="mt-5 space-y-6">
+        <div class="mt-3">
             @foreach ($this->providers as $provider)
-                @if ($account = $this->accounts->where('provider', $provider)->first())
-                    <x-connected-account provider="{{ $account->provider }}" created-at="{{ $account->created_at }}">
+                @php
+                    $account = $this->accounts->where('provider', $provider)->first();
+                    $createdAt = $account ? $account->created_at : null;
+                @endphp
+                <div class="d-flex">
+                    <div class="center">
+                        <x-dynamic-component :component="$provider . '-icon'" />
+                    </div>
 
-                        <x-slot name="action">
-                            @if ($this->accounts->count() > 1 || ! is_null($this->user->password))
-                                <x-jet-button wire:click="confirmRemove({{ $account->id }})" wire:loading.attr="disabled">
+                    <div class="ms-2">
+                        <div>
+                            {{ __(ucfirst($provider)) }}
+                        </div>
+
+                        <div>
+                            <div class="small font-weight-bold">
+                                @if (!is_null($createdAt))
+                                    <div class="text-success">
+                                        {{ __('Connected :at', ['at' => $createdAt]) }}
+                                    </div>
+                                @else
+                                    <div class="text-danger">
+                                        {{ __('Not connected.') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-auto">
+                        @if ($account)
+                            @if ($this->accounts->count() > 1 || !is_null($this->user->password))
+                                <x-jet-button class="btn-danger" wire:click="confirmRemove({{ $account->id }})"
+                                    wire:loading.attr="disabled">
                                     {{ __('Remove') }}
                                 </x-jet-button>
                             @endif
-                        </x-slot>
-
-                    </x-connected-account>
-                @else
-                    <x-connected-account provider="{{ $provider }}">
-                        <x-slot name="action">
-                            <x-jet-button href="{{ route('oauth.redirect', ['provider' => $provider]) }}">
+                        @else
+                            <a class="btn btn-success"
+                                href="{{ route('oauth.redirect', ['provider' => $provider]) }}">
                                 {{ __('Connect') }}
-                            </x-jet-button>
-                        </x-slot>
-                    </x-connected-account>
-                @endif
+                            </a>
+                        @endif
+                    </div>
+                </div>
             @endforeach
         </div>
 
-        <!-- Logout Other Devices Confirmation Modal -->
+        <!-- Remove Connected Account Confirmation Modal -->
         <x-jet-dialog-modal wire:model="confirmingRemove">
             <x-slot name="title">
                 {{ __('Remove Connected Account') }}
@@ -61,7 +84,8 @@
                     {{ __('Nevermind') }}
                 </x-jet-secondary-button>
 
-                <x-jet-button class="ml-2" wire:click="removeConnectedAccount({{ $this->selectedAccountId }})" wire:loading.attr="disabled">
+                <x-jet-button class="ml-2" wire:click="removeConnectedAccount({{ $this->selectedAccountId }})"
+                    wire:loading.attr="disabled">
                     {{ __('Remove Connected Account') }}
                 </x-jet-button>
             </x-slot>

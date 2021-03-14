@@ -22,130 +22,70 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-0">
+            <div class="row">
                 <div class="col-md-6 pr-0">
                     <div class="card-body border-right border-bottom p-3 h-100">
-                        <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="d-flex flex-row bd-highlight pt-2">
+                            <div>
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            </div>
                             <div class="pl-3">
-                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted"
-                                        width="32">
-                                        <path
-                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                                        </path>
-                                    </svg>
-                                    Documentation
+                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
+                                    <a href="https://laravel.com/docs" class="">Documentation</a>
                                 </h3>
-                                <p class="text-muted">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether
-                                    you're new to the framework or have previous experience, we recommend reading all of
-                                    the documentation from beginning to end.
+                                <p class="text-muted small">
+                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
                                 </p>
-                                <a href="https://laravel.com/docs" class="text-decoration-none">
-                                    <div class="mt-3 d-flex align-content-center font-weight-bold text-primary">
-                                        <div>Explore the documentation</div>
-
-                                        <div class="ml-1 text-primary">
-                                            <svg viewBox="0 0 20 20" fill="currentColor" width="16"
-                                                class="arrow-right w-4 h-4">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-6 pl-0">
                     <div class="card-body border-bottom p-3 h-100">
-                        <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="d-flex flex-row bd-highlight pt-2">
+                            <div>
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
                             <div class="pl-3">
-                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted"
-                                        width="32">
-                                        <path
-                                            d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
-                                        </path>
-                                        <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                    Laracasts
+                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
+                                    <a href="https://laracasts.com" class="">Laracasts</a>
                                 </h3>
-                                <p class="text-muted">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
-                                    development. Check them out, see for yourself, and massively level up your
-                                    development skills in the process.
+                                <p class="text-muted small">
+                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
                                 </p>
-                                <a href="https://laravel.com/docs" class="text-decoration-none">
-                                    <div class="mt-3 d-flex align-content-center font-weight-bold text-primary">
-                                        <div>Start watching Laracasts</div>
-
-                                        <div class="ml-1 text-primary">
-                                            <svg viewBox="0 0 20 20" fill="currentColor" width="16"
-                                                class="arrow-right w-4 h-4">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-6 pr-0">
                     <div class="card-body border-right p-3 h-100">
-                        <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="d-flex flex-row bd-highlight pt-2">
                             <div>
-
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
                             </div>
-                            <div class="pl-3">
-                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted"
-                                        width="32">
-                                        <path
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
-                                    Bootstrap
+                            <div class="pl-3 text-sm">
+                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
+                                    <a href="https://laravel-news.com/" class="">Laravel News</a>
                                 </h3>
-                                <p class="text-muted">
-                                    Quickly design and customize responsive mobile-first sites with Bootstrap, the
-                                    world’s most popular front-end open source toolkit, featuring Sass variables and
-                                    mixins, responsive grid system, extensive prebuilt components, and powerful
-                                    JavaScript plugins.
+                                <p class="text-muted small">
+                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-6 pl-0">
                     <div class="card-body p-3 h-100">
-                        <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="d-flex flex-row bd-highlight pt-2">
+                            <div>
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted" width="32"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
                             <div class="pl-3">
-                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="text-muted"
-                                        width="32">
-                                        <path
-                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
-                                        </path>
-                                    </svg>
-                                    Authentication
+                                <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
+                                    <span class="">Vibrant Ecosystem</span>
                                 </h3>
-                                <p class="text-muted">
-                                    Authentication and registration views are included with Laravel Jetstream, as well
-                                    as support for user email verification and resetting forgotten passwords. So, you're
-                                    free to get started what matters most: building your application.
+                                <p class="text-muted small">
+                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="text-muted">Forge</a>, <a href="https://vapor.laravel.com" class="text-muted">Vapor</a>, <a href="https://nova.laravel.com" class="text-muted">Nova</a>, and <a href="https://envoyer.io" class="text-muted">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="text-muted">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="text-muted">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="text-muted">Echo</a>, <a href="https://laravel.com/docs/horizon" class="text-muted">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="text-muted">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="text-muted">Telescope</a>, and more.
                                 </p>
                             </div>
                         </div>

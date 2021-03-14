@@ -137,7 +137,7 @@
                                     {{ Laravel\Jetstream\Jetstream::findRole($user->membership->role)->name }}
                                 </button>
                             @elseif (Laravel\Jetstream\Jetstream::hasRoles())
-                                <button class="btn btn-link text-secondary disabled text-decoration-none ml-2">
+                                <button class="btn btn-link text-secondary disabled text-decoration-none ms-2">
                                     {{ Laravel\Jetstream\Jetstream::findRole($user->membership->role)->name }}
                                 </button>
                             @endif
@@ -195,7 +195,7 @@
                 {{ __('Cancel') }}
             </x-jet-secondary-button>
 
-            <x-jet-button class="ml-2" wire:click="updateRole" wire:loading.attr="disabled">
+            <x-jet-button class="ms-2" wire:click="updateRole" wire:loading.attr="disabled">
                 {{ __('Save') }}
             </x-jet-button>
         </x-slot>
@@ -216,7 +216,7 @@
                 {{ __('Cancel') }}
             </x-jet-secondary-button>
 
-            <x-jet-danger-button class="ml-2" wire:click="leaveTeam" wire:loading.attr="disabled">
+            <x-jet-danger-button class="ms-2" wire:click="leaveTeam" wire:loading.attr="disabled">
                 {{ __('Leave') }}
             </x-jet-danger-button>
         </x-slot>
@@ -237,7 +237,7 @@
                 {{ __('Cancel') }}
             </x-jet-secondary-button>
 
-            <x-jet-danger-button class="ml-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
+            <x-jet-danger-button class="ms-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
                 {{ __('Remove') }}
             </x-jet-danger-button>
         </x-slot>
