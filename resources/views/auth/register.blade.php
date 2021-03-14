@@ -112,6 +112,9 @@
                     </x-jet-button>
                 </div>
             </div>
+            @if (JoelButcher\Socialstream\Socialstream::show())
+                <x-socialstream-providers />
+            @endif
         </form>
         @if (Route::has('login'))
             <div class="text-center text-muted mt-3">
