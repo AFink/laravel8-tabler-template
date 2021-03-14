@@ -4,27 +4,30 @@
     <div class="px-3 flex items-center justify-between">
         <div class="flex items-center">
             @switch($provider)
-                @case('facebook')
-                    <x-facebook-icon class="h-6 w-6 mr-2" />
-                    @break
-                @case('google')
-                    <x-google-icon class="h-6 w-6 mr-2" />
-                    @break
-                @case('twitter')
-                    <x-twitter-icon class="h-6 w-6 mr-2" />
-                    @break
-                @case('linkedin')
-                    <x-linked-in-icon class="h-6 w-6 mr-2" />
-                    @break
-                @case('github')
-                    <x-github-icon class="h-6 w-6 mr-2" />
-                    @break
                 @case('gitlab')
-                    <x-gitlab-icon class="h-6 w-6 mr-2" />
-                    @break
+                <x-discord-icon />
+                @break
+                @case('facebook')
+                <x-facebook-icon />
+                @break
+                @case('google')
+                <x-google-icon />
+                @break
+                @case('twitter')
+                <x-twitter-icon />
+                @break
+                @case('linkedin')
+                <x-linked-in-icon />
+                @break
+                @case('github')
+                <x-github-icon />
+                @break
+                @case('gitlab')
+                <x-gitlab-icon />
+                @break
                 @case('bitbucket')
-                    <x-bitbucket-icon class="h-6 w-6 mr-2" />
-                    @break
+                <x-bitbucket-icon />
+                @break
                 @default
             @endswitch
 
@@ -33,7 +36,7 @@
                     {{ __(ucfirst($provider)) }}
                 </div>
 
-                @if (! is_null($createdAt))
+                @if (!is_null($createdAt))
                     <div class="text-xs text-gray-500">
                         Connected {{ $createdAt }}
                     </div>
@@ -50,7 +53,7 @@
         </div>
     </div>
 
-    @error($provider.'_connect_error')
+    @error($provider . '_connect_error')
         <div class="text-sm font-semibold text-red-500 px-3 mt-2">
             {{ $message }}
         </div>

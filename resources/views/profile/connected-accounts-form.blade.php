@@ -37,9 +37,9 @@
                 @else
                     <x-connected-account provider="{{ $provider }}">
                         <x-slot name="action">
-                            <x-jet-button href="{{ route('oauth.redirect', ['provider' => $provider]) }}">
+                            <a class="btn btn-primary" href="{{ route('oauth.redirect', ['provider' => $provider]) }}">
                                 {{ __('Connect') }}
-                            </x-jet-button>
+                            </a>
                         </x-slot>
                     </x-connected-account>
                 @endif
