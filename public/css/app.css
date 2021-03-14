@@ -17234,3 +17234,7 @@ Antialiasing
 .small {
   font-size: 0.875rem !important;
 }
+
+.form-list > div:first-child h3, .form-list > div:first-child .h3 {
+  color: #fff;
+}

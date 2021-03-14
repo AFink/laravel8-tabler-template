@@ -8,7 +8,7 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="form-list">
         @livewire('teams.update-team-name-form', ['team' => $team])
 
         @livewire('teams.team-member-manager', ['team' => $team])
