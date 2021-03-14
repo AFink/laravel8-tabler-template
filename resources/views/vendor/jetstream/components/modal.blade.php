@@ -29,21 +29,22 @@ switch ($maxWidth ?? '') {
         show: @entangle($attributes->wire('model')),
     }"
     x-init="() => {
-        let modal = $('#{{ $id }}');
+        let modalElement = document.getElementById('{{ $id }}');
+        let modal = new Bootstrap.Modal(modalElement);
         $watch('show', value => {
+            console.log(modal)
             if (value) {
-                modal.modal('show')
+                modal.show()
             } else {
-                modal.modal('hide')
+                modal.hide()
             }
         });
-
-        modal.on('hide.bs.modal', function () {
+        modalElement.addEventListener('hidden.bs.modal', function (event) {
             show = false
         })
     }"
     wire:ignore.self 
-    class="modal fade" 
+    class="modal modal-blur fade" 
     tabindex="-1" 
     id="{{ $id }}" 
     aria-labelledby="{{ $id }}" 
