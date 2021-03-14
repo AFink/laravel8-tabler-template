@@ -30,17 +30,24 @@ switch ($maxWidth ?? '') {
     }"
     x-init="() => {
         let modalElement = document.getElementById('{{ $id }}');
-        let modal = new Bootstrap.Modal(modalElement);
+        var body = document.querySelector('body');
+        if(!window.modals){
+            window.modals = [];
+        }
+        if(window.modals['{{ $id }}']){
+            return;
+        }
+        window.modals['{{ $id }}'] = new Bootstrap.Modal(modalElement);
+        body.appendChild(modalElement)
         $watch('show', value => {
-            console.log(modal)
             if (value) {
-                modal.show()
+                window.modals['{{ $id }}'].show(); 
             } else {
-                modal.hide()
+                window.modals['{{ $id }}'].hide();  
             }
         });
         modalElement.addEventListener('hidden.bs.modal', function (event) {
-            show = false
+            show = false;
         })
     }"
     wire:ignore.self 
