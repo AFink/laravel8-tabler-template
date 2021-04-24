@@ -24,7 +24,7 @@
                     @if (env('GITHUB_URL') !== null)
                         <li class="list-inline-item"><a href="{{ env('GITHUB_URL') }}" target="_blank"
                                 class="link-secondary" rel="noopener">
-                                <x-github-icon /> Github
+                                <x-tablericon-brand-github /> Github
                             </a></li>
                     @endif
                 </ul>
