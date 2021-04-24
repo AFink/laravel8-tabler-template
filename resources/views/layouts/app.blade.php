@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -17,32 +17,33 @@
     <x-jet-banner />
     <!-- Swup Container -->
     <div class="page" id="swup">
-        @livewire('navigation-menu')
+        @include('components.navigation-menu')
 
         <div class="content">
             <div class="container-xl">
                 <!-- Page Heading -->
-                <div class="page-header text-white">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            {{ $header }}
-                        </div>
-                        @if ($headerbtns ?? false)
-                            <div class="col-auto ms-auto">
-                                <div class="btn-list">
-                                    {{ $headerbtns }}
-                                </div>
+                @if ($header ?? false)
+                    <div class="page-header text-white">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                {{ $header }}
                             </div>
-                        @endif
+                            @if ($headerbtns ?? false)
+                                <div class="col-auto ms-auto">
+                                    <div class="btn-list">
+                                        {{ $headerbtns }}
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
                     </div>
-                </div>
-
+                @endif
                 <!-- Page Content -->
                 <main>
                     {{ $slot }}
                 </main>
             </div>
-            @include('footer')
+            @include('components.footer')
         </div>
     </div>
 

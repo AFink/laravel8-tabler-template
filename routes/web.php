@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UserVerificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +13,19 @@ use App\Http\Controllers\UserVerificationController;
 |
 */
 
-Route::get('/email/verify', [UserVerificationController::class, 'notice'])->name('verification.notice');
-Route::get('/email/verify/{id}/{hash}', [UserVerificationController::class, 'verify'])->name('verification.verify');
-Route::post('/email/verification-notification', [UserVerificationController::class, 'send'])->name('verification.send');
+Route::get('/email/verify', [App\Http\Controllers\UserVerificationController::class, 'notice'])->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', [App\Http\Controllers\UserVerificationController::class, 'verify'])->name('verification.verify');
+Route::post('/email/verification-notification', [App\Http\Controllers\UserVerificationController::class, 'send'])->name('verification.send');
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/imprint', [App\Http\Controllers\MarkdownController::class, 'showImprint'])->name('imprint.show');
+Route::get('/terms', [App\Http\Controllers\MarkdownController::class, 'showTerms'])->name('terms.show');
+Route::get('/privacy', [App\Http\Controllers\MarkdownController::class, 'showPrivacy'])->name('policy.show');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

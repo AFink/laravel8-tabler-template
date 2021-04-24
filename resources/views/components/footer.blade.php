@@ -3,9 +3,24 @@
         <div class="row text-center align-items-center flex-row-reverse">
             <div class="col-lg-auto ms-lg-auto">
                 <ul class="list-inline list-inline-dots mb-0">
-                    <li class="list-inline-item"><a href="./docs/index.html" class="link-secondary">Documentation</a>
-                    </li>
-                    <li class="list-inline-item"><a href="./license.html" class="link-secondary">License</a></li>
+                    @if (Route::has('imprint.show'))
+                        <li class="list-inline-item">
+                            <a href="{{ route('imprint.show') }}" class="link-secondary">{{ __('Imprint') }}</a>
+                        </li>
+                    @endif
+
+                    @if (Route::has('terms.show'))
+                        <li class="list-inline-item">
+                            <a href="{{ route('terms.show') }}" class="link-secondary">{{ __('ToS') }}</a>
+                        </li>
+                    @endif
+
+                    @if (Route::has('policy.show'))
+                        <li class="list-inline-item">
+                            <a href="{{ route('policy.show') }}" class="link-secondary">{{ __('Privacy') }}</a>
+                        </li>
+                    @endif
+
                     @if (env('GITHUB_URL') !== null)
                         <li class="list-inline-item"><a href="{{ env('GITHUB_URL') }}" target="_blank"
                                 class="link-secondary" rel="noopener">
