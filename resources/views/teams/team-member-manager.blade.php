@@ -144,11 +144,7 @@
                                             {{ $role->name }}
                                         </span>
                                         @if ($addTeamMemberForm['role'] == $role->key)
-                                            <svg class="ml-1 text-success font-weight-light" width="20" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                stroke="currentColor" viewBox="0 0 24 24">
-                                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
+                                            <x-tablericon-check class="ml-1 text-success" />
                                         @endif
                                     </div>
 
@@ -188,11 +184,7 @@
                                 {{ $role->name }}
                             </span>
                             @if ($currentRole == $role->key)
-                                <svg class="ml-1 text-success font-weight-light" width="20" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
+                                <x-tablericon-check class="ml-1 text-success" />
                             @endif
                         </div>
 
