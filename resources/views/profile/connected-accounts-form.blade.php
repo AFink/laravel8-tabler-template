@@ -28,7 +28,7 @@
                 @endphp
                 <div class="d-flex">
                     <div class="center">
-                        <x-dynamic-component :component="$provider . '-icon'" />
+                        <x-dynamic-component :component="'tablericons-brand-' . $provider" />
                     </div>
 
                     <div class="ms-2">
