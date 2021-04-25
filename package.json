@@ -16,7 +16,7 @@
         "alpinejs": "^2.7.3",
         "autoprefixer": "^10.0.2",
         "axios": "^0.21",
-        "bootstrap": "^5.0.0-beta2",
+        "bootstrap": "^5.0.0-beta3",
         "jquery": "^3.5.1",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",

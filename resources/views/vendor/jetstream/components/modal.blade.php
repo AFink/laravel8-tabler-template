@@ -24,37 +24,30 @@ switch ($maxWidth ?? '') {
 @endphp
 
 <!-- Modal -->
-<div 
+<div
     x-data="{
         show: @entangle($attributes->wire('model')),
     }"
     x-init="() => {
         let modalElement = document.getElementById('{{ $id }}');
-        var body = document.querySelector('body');
-        if(!window.modals){
-            window.modals = [];
-        }
-        if(window.modals['{{ $id }}']){
-            return;
-        }
-        window.modals['{{ $id }}'] = new Bootstrap.Modal(modalElement);
-        body.appendChild(modalElement)
+        let modal = new Bootstrap.Modal(modalElement);
+
         $watch('show', value => {
             if (value) {
-                window.modals['{{ $id }}'].show(); 
+                modal.show();
             } else {
-                window.modals['{{ $id }}'].hide();  
+                modal.hide();
             }
         });
         modalElement.addEventListener('hidden.bs.modal', function (event) {
             show = false;
         })
     }"
-    wire:ignore.self 
-    class="modal modal-blur fade" 
-    tabindex="-1" 
-    id="{{ $id }}" 
-    aria-labelledby="{{ $id }}" 
+    wire:ignore.self
+    class="modal modal-blur fade"
+    tabindex="-1"
+    id="{{ $id }}"
+    aria-labelledby="{{ $id }}"
     aria-hidden="true"
     x-ref="{{ $id }}"
 >
