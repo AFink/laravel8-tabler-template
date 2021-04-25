@@ -28,7 +28,34 @@
                 @endphp
                 <div class="d-flex">
                     <div class="center">
-                        <x-dynamic-component :component="'tablericons-brand-' . $provider" />
+                        @switch($provider)
+                            @case('github')
+                                <x-tablericon-brand-github />
+                            @break
+                            @case('discord')
+                                <x-tablericon-brand-discord />
+                            @break
+                            @case('twitter')
+                                <x-tablericon-brand-twitter />
+                            @break
+                            @case('facebook')
+                                <x-tablericon-brand-facebook />
+                            @break
+                            @case('google')
+                                <x-tablericon-brand-google />
+                            @break
+                            @case('linkedin')
+                                <x-tablericon-brand-linkedin />
+                            @break
+                            @case('linkedin')
+                                <x-tablericon-brand-linkedin />
+                            @break
+                            @case('bitbucket')
+                                <x-tablericon-brand-bitbucket />
+                            @break
+                            @default
+
+                        @endswitch
                     </div>
 
                     <div class="ms-2">
