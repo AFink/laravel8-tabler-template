@@ -19,7 +19,7 @@
                     <div class="d-flex justify-content-between mt-2 mb-2">
                         <div class="d-flex align-items-center">
                             <div class="pr-3">
-                                <img width="32" class="rounded-circle" src="{{ $user->profile_photo_url }}">
+                                <x-avatar :model="$user" size="md" />
                             </div>
                             <span>{{ $user->name }}</span>
                         </div>
