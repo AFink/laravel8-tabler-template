@@ -106,7 +106,7 @@
 
             <x-slot name="form">
                 <x-jet-action-message on="saved">
-                    {{ __('Added the new Team Member.') }}
+                    {{ __('Invited the new Team Member.') }}
                 </x-jet-action-message>
 
                 <div class="mb-3">
