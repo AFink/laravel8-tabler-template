@@ -9,7 +9,7 @@
 
     <x-slot name="content">
         <x-jet-action-message on="loggedOut">
-            {{ __('Done.') }}
+            {{ __('Logged out of session.') }}
         </x-jet-action-message>
 
         <div>

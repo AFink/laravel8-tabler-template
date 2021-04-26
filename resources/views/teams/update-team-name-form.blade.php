@@ -9,7 +9,7 @@
 
     <x-slot name="form">
         <x-jet-action-message on="saved">
-            {{ __('Saved.') }}
+            {{ __('Sucessfully saved the team details.') }}
         </x-jet-action-message>
 
         <!-- Team Owner Information -->

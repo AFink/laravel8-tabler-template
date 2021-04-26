@@ -11,7 +11,7 @@
 
         <x-slot name="form">
             <x-jet-action-message on="created">
-                {{ __('Created.') }}
+                {{ __('Created API Token.') }}
             </x-jet-action-message>
 
             <div class="w-md-75">
