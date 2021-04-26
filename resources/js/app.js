@@ -16,3 +16,7 @@ if (swup) {
 document.addEventListener('swup:contentReplaced', (event) => {
     window.livewire.restart();
 }); */
+
+
+import Swal from 'sweetalert2/src/sweetalert2.js';
+window.Swal = Swal;
