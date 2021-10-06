@@ -20,7 +20,7 @@ Route::post('/email/verification-notification', [App\Http\Controllers\UserVerifi
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/imprint', [App\Http\Controllers\MarkdownController::class, 'showImprint'])->name('imprint.show');
 Route::get('/terms', [App\Http\Controllers\MarkdownController::class, 'showTerms'])->name('terms.show');
