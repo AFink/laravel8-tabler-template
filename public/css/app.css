@@ -17244,3 +17244,7 @@ Antialiasing
   justify-content: center;
   align-items: center;
 }
+
+.page-center {
+  justify-content: center;
+}
