@@ -1,3 +1,8 @@
+@section('title', __('Register'))
+@section('description', __('Register Page Description'))
+@section('keywords', 'forgot, password')
+@section('robots', 'index, follow')
+
 <x-auth-layout>
     <x-jet-authentication-card>
         <form class="card card-md" method="POST" action="{{ route('register') }}">

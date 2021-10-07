@@ -1,3 +1,8 @@
+@section('title', __('Dashboard'))
+@section('description', __('Dashboard Page Description'))
+@section('keywords', 'dashboard, home')
+@section('robots', 'index, follow')
+
 <x-app-layout>
     <x-slot name="header">
         <div class="page-pretitle">

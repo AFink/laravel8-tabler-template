@@ -1,3 +1,8 @@
+@section('title', __('Two-Factor Challenge'))
+@section('description', __('Two-Factor Challenge Page Description'))
+@section('keywords', 'two factor, challenge')
+@section('robots', 'index, follow')
+
 <x-auth-layout>
     <x-jet-authentication-card>
         <form class="card card-md" method="POST" action="{{ route('two-factor.login') }}">

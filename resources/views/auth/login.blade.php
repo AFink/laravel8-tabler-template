@@ -1,3 +1,8 @@
+@section('title', __('Login'))
+@section('description', __('Login Page Description'))
+@section('keywords', 'login, signin')
+@section('robots', 'index, follow')
+
 <x-auth-layout>
     <x-jet-authentication-card>
         <form class="card card-md" method="POST" action="{{ route('login') }}">

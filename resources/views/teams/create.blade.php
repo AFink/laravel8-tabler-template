@@ -1,3 +1,8 @@
+@section('title', __('Create Team'))
+@section('description', __('Create Team Page Description'))
+@section('keywords', 'create, team')
+@section('robots', 'index, follow')
+
 <x-app-layout>
     <x-slot name="header">
         <div class="page-pretitle">
