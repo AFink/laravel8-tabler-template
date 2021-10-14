@@ -24,7 +24,7 @@
                     @if (env('GITHUB_URL') !== null)
                         <li class="list-inline-item"><a href="{{ env('GITHUB_URL') }}" target="_blank"
                                 class="link-secondary" rel="noopener">
-                                <x-tablericon-brand-github /> Github
+                                <x-tablericon-brand-github /> {{ __('Github') }}
                             </a></li>
                     @endif
                 </ul>
@@ -32,9 +32,9 @@
             <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                 <ul class="list-inline list-inline-dots mb-0">
                     <li class="list-inline-item">
-                        Copyright © {{ date('Y') }}
+                        {{ __('Copyright') }} &copy; {{ date('Y') }}
                         <a href="." class="link-secondary">{{ config('app.name', 'Laravel') }}</a>.
-                        All rights reserved.
+                        {{ __('All rights reserved.') }}
                     </li>
                     @if (env('VERSION') !== null)
                         <li class="list-inline-item">
