@@ -1,3 +1,7 @@
+@section('title', __('Reset Password'))
+@section('description', __('Reset Password Page Description'))
+@section('keywords', 'reset, password')
+
 <x-auth-layout>
     <x-jet-authentication-card>
         <form class="card card-md" method="POST" action="{{ route('password.update') }}">

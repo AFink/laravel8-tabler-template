@@ -1,3 +1,7 @@
+@section('title', __('Forgot Password'))
+@section('description', __('Forgot Password Page Description'))
+@section('keywords', 'forgot, password')
+
 <x-auth-layout>
     <x-jet-authentication-card>
         <form class="card card-md" method="POST" action="{{ route('password.email') }}">

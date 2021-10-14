@@ -1,3 +1,7 @@
+@section('title', __('Verify Email Address'))
+@section('description', __('Verify Email Address Page Description'))
+@section('keywords', 'verify, email')
+
 <x-auth-layout>
     <x-jet-authentication-card>
         <form class="card card-md" method="POST" action="{{ route('verification.send') }}">

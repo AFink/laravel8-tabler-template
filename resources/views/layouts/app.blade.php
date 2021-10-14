@@ -7,7 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@hasSection('title')@yield('title') | @endif{{ env('APP_NAME', 'Laravel Tabler') }}</title>
+
+    <meta name="robots" content="@yield('robots', 'index, follow')">
+
+    @hasSection('description')<meta name="description" content="@yield('description')">@endif
+    @hasSection('keywords')<meta name="keywords" content="@yield('keywords')">@endif
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">

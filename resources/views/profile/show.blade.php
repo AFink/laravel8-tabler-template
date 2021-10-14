@@ -1,3 +1,7 @@
+@section('title', __('Profile'))
+@section('description', __('Profile Page Description'))
+@section('keywords', 'profile, page')
+
 <x-app-layout>
     <x-slot name="header">
         <div class="page-pretitle">
