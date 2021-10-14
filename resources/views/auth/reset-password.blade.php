@@ -1,7 +1,6 @@
 @section('title', __('Reset Password'))
 @section('description', __('Reset Password Page Description'))
 @section('keywords', 'reset, password')
-@section('robots', 'index, follow')
 
 <x-auth-layout>
     <x-jet-authentication-card>

@@ -1,7 +1,6 @@
 @section('title', __('Confirm Password'))
 @section('description', __('Confirm Password Page Description'))
 @section('keywords', 'confirm, password')
-@section('robots', 'index, follow')
 
 <x-auth-layout>
     <x-jet-authentication-card>

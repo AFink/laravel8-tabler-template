@@ -1,7 +1,6 @@
 @section('title', __('API Tokens'))
 @section('description', __('API Tokens Page Description'))
 @section('keywords', 'api, tokens')
-@section('robots', 'index, follow')
 
 <x-app-layout>
     <x-slot name="header">

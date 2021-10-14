@@ -8,7 +8,7 @@
 
         <title>@hasSection('title')@yield('title') | @endif{{ env('APP_NAME', 'Laravel Tabler') }}</title>
 
-        @hasSection('robots')<meta name="robots" content="@yield('robots')">@endif
+        <meta name="robots" content="@yield('robots', 'index, follow')">
 
         @hasSection('description')<meta name="description" content="@yield('description')">@endif
         @hasSection('keywords')<meta name="keywords" content="@yield('keywords')">@endif

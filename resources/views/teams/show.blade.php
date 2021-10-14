@@ -1,7 +1,6 @@
 @section('title', __('Team'))
 @section('description', __('Team Page Description'))
 @section('keywords', 'team')
-@section('robots', 'index, follow')
 
 <x-app-layout>
     <x-slot name="header">
