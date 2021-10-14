@@ -27,12 +27,12 @@
                 @if (Route::has('login'))
                     <div class="">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="text-muted">Dashboard</a>
+                            <a href="{{ url('/dashboard') }}" class="text-muted">{{ __('Dashboard') }}</a>
                         @else
-                            <a href="{{ route('login') }}" class="text-muted">Log in</a>
+                            <a href="{{ route('login') }}" class="text-muted">{{ __('Log in') }}</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 text-muted">Register</a>
+                                <a href="{{ route('register') }}" class="ml-4 text-muted">{{ __('Register') }}</a>
                             @endif
                         @endif
                     </div>
@@ -60,10 +60,10 @@
                                     </div>
                                     <div class="pl-3">
                                         <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
-                                            <a href="https://laravel.com/docs" class="">Documentation</a>
+                                            <a href="https://laravel.com/docs" class="">{{ __('Documentation') }}</a>
                                         </h3>
                                         <p class="text-muted small">
-                                            Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                                            {{ __('Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.') }}
                                         </p>
                                     </div>
                                 </div>
@@ -77,10 +77,10 @@
                                     </div>
                                     <div class="pl-3">
                                         <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
-                                            <a href="https://laracasts.com" class="">Laracasts</a>
+                                            <a href="https://laracasts.com" class="">{{ __('Laracasts') }}</a>
                                         </h3>
                                         <p class="text-muted small">
-                                            Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                            {{ __('Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.') }}
                                         </p>
                                     </div>
                                 </div>
@@ -94,10 +94,10 @@
                                     </div>
                                     <div class="pl-3 text-sm">
                                         <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
-                                            <a href="https://laravel-news.com/" class="">Laravel News</a>
+                                            <a href="https://laravel-news.com/" class="">{{ __('Laravel News') }}</a>
                                         </h3>
                                         <p class="text-muted small">
-                                            Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                            {{ __('Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.') }}
                                         </p>
                                     </div>
                                 </div>
@@ -111,10 +111,10 @@
                                     </div>
                                     <div class="pl-3">
                                         <h3 class="card-title font-weight-bolder text-decoration-none text-dark my-1">
-                                            <span class="">Vibrant Ecosystem</span>
+                                            <span class="">{{ __('Vibrant Ecosystem') }}</span>
                                         </h3>
                                         <p class="text-muted small">
-                                            Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="text-muted">Forge</a>, <a href="https://vapor.laravel.com" class="text-muted">Vapor</a>, <a href="https://nova.laravel.com" class="text-muted">Nova</a>, and <a href="https://envoyer.io" class="text-muted">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="text-muted">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="text-muted">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="text-muted">Echo</a>, <a href="https://laravel.com/docs/horizon" class="text-muted">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="text-muted">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="text-muted">Telescope</a>, and more.
+                                            {!! __('Laravel\'s robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="text-muted">Forge</a>, <a href="https://vapor.laravel.com" class="text-muted">Vapor</a>, <a href="https://nova.laravel.com" class="text-muted">Nova</a>, and <a href="https://envoyer.io" class="text-muted">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="text-muted">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="text-muted">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="text-muted">Echo</a>, <a href="https://laravel.com/docs/horizon" class="text-muted">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="text-muted">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="text-muted">Telescope</a>, and more.') !!}
                                         </p>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                             </svg>
 
                             <a href="https://laravel.bigcartel.com" class="text-muted">
-                                Shop
+                                {{ __('Shop') }}
                             </a>
 
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 text-muted" style="width: 18px">
@@ -139,13 +139,13 @@
                             </svg>
 
                             <a href="https://github.com/sponsors/taylorotwell" class="text-muted">
-                                Sponsor
+                                {{ __('Sponsor') }}
                             </a>
                         </div>
                     </div>
 
                     <div class="text-sm text-muted">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        {{ __('Laravel') }} v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>

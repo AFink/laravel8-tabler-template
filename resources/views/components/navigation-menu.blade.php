@@ -31,8 +31,7 @@
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="nav-item dropdown me-3">
                         <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
-                            aria-label="Open team menu">
-
+                            aria-label="{{ __('Open team menu') }}">
 
                             <div>{{ Auth::user()->currentTeam->name }}</div>
                             <svg class="ms-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -70,7 +69,7 @@
                 <!-- User Dropdown -->
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
-                        aria-label="Open user menu">
+                        aria-label="{{ __('Open user menu') }}">
                         <x-avatar :model="Auth::user()" />
                         <div class="d-none d-xl-block ps-2">
                             <div>{{ Auth::user()->name }}</div>
@@ -93,7 +92,7 @@
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();"
                             class="dropdown-item" data-no-swup>
-                            {{ __('Log out') }}
+                            {{ __('Logout') }}
                         </a>
                         <form method="POST" id="logout-form" action="{{ route('logout') }}">
                             @csrf
@@ -118,7 +117,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Dashboard
+                                {{ __('Dashboard') }}
                             </span>
                         </a>
                     </li>
@@ -129,8 +128,8 @@
                                 <span class="input-icon-addon">
                                    <x-tablericon-search />
                                 </span>
-                                <input type="text" class="form-control form-control-dark" placeholder="Search…"
-                                    aria-label="Search in website">
+                                <input type="text" class="form-control form-control-dark" placeholder="{{ __('Search…') }}"
+                                    aria-label="{{ __('Search in website') }}">
                             </div>
                         </form>
                     </div> -->
