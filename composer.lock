@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2911dfce531d53f0989ade7b29eb3100",
+    "content-hash": "6bed2ed0014285963c98d165076fcd52",
     "packages": [
         {
             "name": "afink/blade-tablericons",
-            "version": "v1.40.0",
+            "version": "v1.41.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AFink/blade-tablericons.git",
-                "reference": "436a8bb2b0094d76f32975894109b7bbb23e348a"
+                "reference": "6cf7b2da54f8962c19e4fb8bde8946ba6be5d4ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AFink/blade-tablericons/zipball/436a8bb2b0094d76f32975894109b7bbb23e348a",
-                "reference": "436a8bb2b0094d76f32975894109b7bbb23e348a",
+                "url": "https://api.github.com/repos/AFink/blade-tablericons/zipball/6cf7b2da54f8962c19e4fb8bde8946ba6be5d4ee",
+                "reference": "6cf7b2da54f8962c19e4fb8bde8946ba6be5d4ee",
                 "shasum": ""
             },
             "require": {
@@ -60,9 +60,9 @@
             ],
             "support": {
                 "issues": "https://github.com/AFink/blade-tablericons/issues",
-                "source": "https://github.com/AFink/blade-tablericons/tree/v1.40.0"
+                "source": "https://github.com/AFink/blade-tablericons/tree/v1.41.2"
             },
-            "time": "2021-04-24T23:46:09+00:00"
+            "time": "2021-09-10T12:51:17+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -8959,5 +8959,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
