@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  website:
+    container_name: website
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      - mysql
+    ports:
+      - 127.0.0.1:8080:80
+    networks:
+      - laravel
+  mysql:
+    container_name: mysql
+    image: mariadb
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=laravel
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=laravel
+      - MYSQL_PASSWORD=laravel
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - laravel
+volumes:
+  mysqldata:
+networks:
+  laravel:
+    driver: bridge
